@@ -1,14 +1,3 @@
-// Hello.
-//
-// This is JSHint, a tool that helps to detect errors and potential
-// problems in your JavaScript code.
-//
-// To start, simply enter some JavaScript anywhere on this page. Your
-// report will appear on the right side.
-//
-// Additionally, you can toggle specific options in the Configure
-// menu.
-
 var bio = {
     "name": "Majeed Fahad",
     "role": "Developer",
@@ -25,18 +14,15 @@ var bio = {
     "biopic": "images/myImg.jpg"
 };
 var education = {
-    "schools": [
-        {
-            "name": "KSU",
-            "location": "Riyadh",
-            "degree": "Bachelore",
-            "major": ["CS"],
-            "dates": "2014",
-            "url": "edugate.ksu.edu.sa"
-        }
-    ],
-    "OnlineCourses": [
-        {
+    "schools": [{
+        "name": "KSU",
+        "location": "Riyadh",
+        "degree": "Bachelore",
+        "major": ["CS"],
+        "dates": "2014",
+        "url": "edugate.ksu.edu.sa"
+    }],
+    "OnlineCourses": [{
             "title": "JavaScript",
             "school": "Udacity",
             "dates": "2017",
@@ -51,28 +37,24 @@ var education = {
     ]
 };
 var work = {
-    "jobs": [
-        {
-            "employer": "Aramco",
-            "title": "Technical services",
-            "location": "Dhahran",
-            "dates": "July 2, 2017",
-            "description": "I worked on a research of mobile application for wayfinding, which is provide a map in a center which i worked in."
-        }
-    ]
+    "jobs": [{
+        "employer": "Aramco",
+        "title": "Technical services",
+        "location": "Dhahran",
+        "dates": "July 2, 2017",
+        "description": "I worked on a research of mobile application for wayfinding, which is provide a map in a center which i worked in."
+    }]
 };
 var projects = {
-    "projects": [
-        {
-            "title": "Qattah project",
-            "dates": "2014",
-            "description": "It is an android application made for trips with friends, which provide a summation of the payment of each one and divide it on members. (it is not a complete project)",
-            "images": ["images/project_img1.png", "images/project_img2.png", "images/project_img3.png"]
-        }
-    ]
+    "projects": [{
+        "title": "Qattah project",
+        "dates": "2014",
+        "description": "It is an android application made for trips with friends, which provide a summation of the payment of each one and divide it on members. (it is not a complete project)",
+        "images": ["images/project_img2.png", "images/project_img1.png", "images/project_img3.png"]
+    }]
 };
 
-bio.display = function () {
+bio.display = function() {
     var formattedName = HTMLheaderName.replace("%data%", bio.name);
     var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
     var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
@@ -88,7 +70,7 @@ bio.display = function () {
     $("#header").append(formattedWelcome);
     if (bio.skills.length > 0) {
         $("#header").append(HTMLskillsStart);
-        bio.skills.forEach(function (skill) {
+        bio.skills.forEach(function(skill) {
             var formattedSkill = HTMLskills.replace("%data%", skill);
             $("#skills").append(formattedSkill);
         });
@@ -97,20 +79,20 @@ bio.display = function () {
 };
 bio.display();
 
-education.display = function(){
-    education.schools.forEach(function(school){
+education.display = function() {
+    education.schools.forEach(function(school) {
         $("#education").append(HTMLschoolStart);
-        var formattedName = HTMLschoolName.replace("%data%",school.name);
-        var formattedLocation = HTMLschoolLocation.replace("%data%",school.location);
-        var formattedDegree = HTMLschoolDegree.replace("%data%",school.degree);
-        var formattedMajor = HTMLschoolMajor.replace("%data%",school.major);
-        var formattedDates = HTMLschoolDates.replace("%data%",school.dates);
+        var formattedName = HTMLschoolName.replace("%data%", school.name);
+        var formattedLocation = HTMLschoolLocation.replace("%data%", school.location);
+        var formattedDegree = HTMLschoolDegree.replace("%data%", school.degree);
+        var formattedMajor = HTMLschoolMajor.replace("%data%", school.major);
+        var formattedDates = HTMLschoolDates.replace("%data%", school.dates);
         $(".education-entry:last").append(formattedName + formattedLocation + formattedDegree + formattedDates);
         $(".education-entry:last").append(formattedMajor);
     });
     $(".education-entry:last").append(HTMLonlineClasses);
-    education.OnlineCourses.forEach(function(course){
-        
+    education.OnlineCourses.forEach(function(course) {
+
         var formattedTitle = HTMLonlineTitle.replace("%data%", course.title);
         var formattedSchool = HTMLonlineSchool.replace("%data%", course.school);
         var formattedDates = HTMLonlineDates.replace("%data%", course.dates);
@@ -120,8 +102,8 @@ education.display = function(){
 };
 education.display();
 
-work.display = function () {
-    work.jobs.forEach(function (job) {
+work.display = function() {
+    work.jobs.forEach(function(job) {
         $("#workExperience").append(HTMLworkStart);
         var formattedEmployer = HTMLworkEmployer.replace("%data%", job.employer);
         var formattedTitle = HTMLworkTitle.replace("%data%", job.title);
@@ -148,14 +130,14 @@ work.display();
 //     return result;
 // }
 // $("#main").append(internationalizeButton);
-projects.display = function () {
-    projects.projects.forEach(function (project) {
+projects.display = function() {
+    projects.projects.forEach(function(project) {
         $("#projects").append(HTMLprojectStart);
         var formattedTitle = HTMLprojectTitle.replace("%data%", project.title);
         var formattedDates = HTMLprojectDates.replace("%data%", project.dates);
         var formattedDescription = HTMLprojectDescription.replace("%data%", project.description);
         $(".project-entry:last").append(formattedTitle + formattedDates + formattedDescription);
-        project.images.forEach(function (image) {
+        project.images.forEach(function(image) {
             var formattedImage = HTMLprojectImage.replace("%data%", image);
             $(".project-entry:last").append(formattedImage);
         });
