@@ -1,3 +1,14 @@
+// Hello.
+//
+// This is JSHint, a tool that helps to detect errors and potential
+// problems in your JavaScript code.
+//
+// To start, simply enter some JavaScript anywhere on this page. Your
+// report will appear on the right side.
+//
+// Additionally, you can toggle specific options in the Configure
+// menu.
+
 var bio = {
     "name": "Majeed Fahad",
     "role": "Developer",
@@ -9,9 +20,9 @@ var bio = {
     },
     "welcomeMessage": "Hello Everybody",
     "skills": [
-        "android", "front-end", "back-end", "Java"
+        "android", "front-end", "Java"
     ],
-    "biopic": "images/fry.jpg"
+    "biopic": "images/myImg.jpg"
 };
 var education = {
     "schools": [
@@ -27,14 +38,14 @@ var education = {
     "OnlineCourses": [
         {
             "title": "JavaScript",
-            "School": "Udacity",
+            "school": "Udacity",
             "dates": "2017",
             "url": "www.udacity.com"
         },
         {
             "title": "android",
-            "School": "Udemy",
-            "date": "2015",
+            "school": "Udemy",
+            "dates": "2015",
             "url": "www.udemy.com"
         }
     ]
@@ -42,28 +53,21 @@ var education = {
 var work = {
     "jobs": [
         {
-            "employer": "Fahad Altaweel",
-            "title": "programmer",
-            "location": "Riyadh",
-            "dates": "January ",
-            "description": "dd"
-        },
-        {
             "employer": "Aramco",
-            "title": "developer",
-            "location": "Sharqiyah",
-            "dates": "",
-            "description": "desc"
+            "title": "Technical services",
+            "location": "Dhahran",
+            "dates": "July 2, 2017",
+            "description": "I worked on a research of mobile application for wayfinding, which is provide a map in a center which i worked in."
         }
     ]
 };
 var projects = {
     "projects": [
         {
-            "title": "some title..",
-            "dates": "2017",
-            "description": "some description which I don't know what can I write in it. some description which I don't know what can I write in it. some description which I don't know what can I write in it. some description which I don't know what can I write in it.",
-            "images": ["images/197x148.gif", "images/197x148.gif"]
+            "title": "Qattah project",
+            "dates": "2014",
+            "description": "It is an android application made for trips with friends, which provide a summation of the payment of each one and divide it on members. (it is not a complete project)",
+            "images": ["images/project_img1.png", "images/project_img2.png", "images/project_img3.png"]
         }
     ]
 };
@@ -76,8 +80,7 @@ bio.display = function () {
     var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
     var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
     $("#header").prepend(formattedName + formattedRole);
-    $("#topContacts , #footerContacts").append(formattedMobile + formattedEmail
-        + formattedGithub + formattedLocation);
+    $("#topContacts , #footerContacts").append(formattedMobile + formattedEmail + formattedGithub + formattedLocation);
 
     var formattedBiopic = HTMLbioPic.replace("%data%", bio.biopic);
     var formattedWelcome = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
@@ -88,10 +91,10 @@ bio.display = function () {
         bio.skills.forEach(function (skill) {
             var formattedSkill = HTMLskills.replace("%data%", skill);
             $("#skills").append(formattedSkill);
-        })
+        });
 
     }
-}
+};
 bio.display();
 
 education.display = function(){
@@ -102,10 +105,9 @@ education.display = function(){
         var formattedDegree = HTMLschoolDegree.replace("%data%",school.degree);
         var formattedMajor = HTMLschoolMajor.replace("%data%",school.major);
         var formattedDates = HTMLschoolDates.replace("%data%",school.dates);
-        $(".education-entry:last").append(formattedName + formattedLocation
-            + formattedDegree + formattedDates);
+        $(".education-entry:last").append(formattedName + formattedLocation + formattedDegree + formattedDates);
         $(".education-entry:last").append(formattedMajor);
-    })
+    });
     $(".education-entry:last").append(HTMLonlineClasses);
     education.OnlineCourses.forEach(function(course){
         
@@ -113,10 +115,9 @@ education.display = function(){
         var formattedSchool = HTMLonlineSchool.replace("%data%", course.school);
         var formattedDates = HTMLonlineDates.replace("%data%", course.dates);
         var formattedURL = HTMLonlineURL.replace("%data%", course.url);
-        $(".education-entry:last").append(formattedTitle + formattedSchool 
-            + formattedDates + formattedURL);
-    })
-}
+        $(".education-entry:last").append(formattedTitle + formattedSchool + formattedDates + formattedURL);
+    });
+};
 education.display();
 
 work.display = function () {
@@ -128,10 +129,9 @@ work.display = function () {
         var formattedDates = HTMLworkDates.replace("%data%", job.dates);
         var formattedLocation = HTMLworkLocation.replace("%data%", job.location);
         var formattedDescription = HTMLworkDescription.replace("%data%", job.description);
-        $(".work-entry:last").append(formattedEmployerTitle + formattedDates
-            + formattedLocation + formattedDescription);
-    })
-}
+        $(".work-entry:last").append(formattedEmployerTitle + formattedDates + formattedLocation + formattedDescription);
+    });
+};
 work.display();
 // $(document).click(function(loc) {
 //   logClicks(loc.pageX, loc.pageY);
@@ -154,13 +154,12 @@ projects.display = function () {
         var formattedTitle = HTMLprojectTitle.replace("%data%", project.title);
         var formattedDates = HTMLprojectDates.replace("%data%", project.dates);
         var formattedDescription = HTMLprojectDescription.replace("%data%", project.description);
-        $(".project-entry:last").append(formattedTitle + formattedDates
-            + formattedDescription);
+        $(".project-entry:last").append(formattedTitle + formattedDates + formattedDescription);
         project.images.forEach(function (image) {
             var formattedImage = HTMLprojectImage.replace("%data%", image);
             $(".project-entry:last").append(formattedImage);
-        })
-    })
-}
+        });
+    });
+};
 projects.display();
 $("#mapDiv").append(googleMap);
