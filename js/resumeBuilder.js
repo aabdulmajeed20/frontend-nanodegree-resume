@@ -42,17 +42,17 @@ var work = {
         "title": "Technical services",
         "location": "Dhahran",
         "dates": "July 2, 2017",
-        "description": "I worked on a research of mobile application for wayfinding,"
-        + " which is provide a map in a center which i worked in."
+        "description": "I worked on a research of mobile application for wayfinding," +
+            " which is provide a map in a center which i worked in."
     }]
 };
 var projects = {
     "projects": [{
         "title": "Qattah project",
         "dates": "2014",
-        "description": "It is an android application made for trips with friends,"
-        + " which provide a summation of the payment of each one and divide it on"
-        + " members. (it is not a complete project)",
+        "description": "It is an android application made for trips with friends," +
+            " which provide a summation of the payment of each one and divide it on" +
+            " members. (it is not a complete project)",
         "images": ["images/project_img2.png", "images/project_img1.png", "images/project_img3.png"]
     }]
 };
