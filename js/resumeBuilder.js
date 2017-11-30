@@ -1,15 +1,15 @@
 var bio = {
-    "name": "Majeed Fahad",
-    "role": "Developer",
+    "name": "Abdulmajeed Altaweel",
+    "role": "Student",
     "contacts": {
         "mobile": "0540366642",
         "email": "aabdulmajeed16@gmail.com",
         "github": "https://github.com/aabdulmajeed20",
         "location": "Riyadh"
     },
-    "welcomeMessage": "Hello Everybody",
+    "welcomeMessage": "Welcome to my Curriculum Vitae",
     "skills": [
-        "android", "front-end", "Java"
+        "JavaScript", "Front-End", "Java"
     ],
     "biopic": "images/myImg.jpg"
 };
@@ -29,10 +29,10 @@ var education = {
             "url": "www.udacity.com"
         },
         {
-            "title": "android",
-            "school": "Udemy",
-            "dates": "2015",
-            "url": "www.udemy.com"
+            "title": "front-end",
+            "school": "Udacity",
+            "dates": "2017",
+            "url": "www.udacity.com"
         }
     ]
 };
@@ -42,7 +42,7 @@ var work = {
         "title": "Technical services",
         "location": "Dhahran",
         "dates": "July 2, 2017",
-        "description": "I worked on a research of mobile application for wayfinding," +
+        "description": "I was a trainee in Aramco Saudi, I worked on a research of mobile application for wayfinding," +
             " which is provide a map in a center which i worked in."
     }]
 };
